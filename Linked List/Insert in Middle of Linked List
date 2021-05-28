@@ -1,0 +1,55 @@
+//approach 1.
+Node* insertInMiddle(Node* head, int x)
+{
+	
+	int count=0;
+	Node* temp=head;
+	while(temp!=NULL)
+	{
+	    temp=temp->next;
+	    count++;
+	}
+	
+	temp=head;
+	int mid=0;
+	int limit = count/2;
+
+	if(count%2==0)
+	{ limit-=1;
+	    
+	}
+	while(mid<limit)
+	{
+	    temp=temp->next;
+	    mid++;
+	}
+	Node* temp2=new Node(x);
+	temp2->next=temp->next;
+	temp->next=temp2;
+	//temp2->data=x;
+	return head;
+	
+	// Cpde here
+}
+///////////////////////////////////////////////////////////////////
+approach 2. using hare and tortoise technique.
+Node* insertInMiddle(Node* head, int x)
+{
+	if(head==NULL) return new Node(x);
+	else{
+	    Node* slow=head;
+	    Node* fast=head->next;
+	    Node * temp=new Node(x);
+	    while(fast && fast->next!=NULL)
+	    {
+	        slow=slow->next;
+	        fast=fast->next->next;
+	    }
+	    
+	    temp->next=slow->next;
+	    slow->next=temp;
+	   
+	}
+	 return head;
+
+}
