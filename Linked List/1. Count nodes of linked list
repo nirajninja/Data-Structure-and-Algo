@@ -1,0 +1,20 @@
+class Solution
+{
+    public:
+    
+    int getCount(struct Node* head){
+    
+    int n=0;
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        temp=temp->next;
+        n++;
+    }
+    
+    return n;
+        
+        
+    
+    }
+};
