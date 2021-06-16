@@ -1,0 +1,17 @@
+long long power(int x,int n)
+    {
+       //Your code here
+       if(n==0)
+       {
+           return 1;
+       }
+       
+       long long xn=power(x,n/2);
+       long long  xn2=(xn*xn)%1000000007;
+       if(n%2==1)
+       {
+           xn2= ( x * xn2)%1000000007;
+       }
+       return xn2%1000000007;
+        
+    }
