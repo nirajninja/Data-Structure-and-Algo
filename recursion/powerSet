@@ -1,0 +1,27 @@
+vector <string> powerSet(string s)
+{
+    if(s.size()==0)
+    {
+        vector<string> bres;
+        bres.push_back("");
+        return bres;
+    }
+    char ch=s[0];
+    string rros=s.substr(1);
+    vector<string> rres=powerSet(rros);
+    vector<string> mres;
+    for(auto rstr:rres){
+        mres.push_back(""+rstr);
+    }
+    
+    for(auto rstr:rres){
+        mres.push_back(ch+rstr);
+    }
+    return mres;
+    
+    
+    
+   //Your code here
+}
+
+//summet malik is god.
