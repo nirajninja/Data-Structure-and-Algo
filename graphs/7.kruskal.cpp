@@ -6,6 +6,7 @@ struct util{
 	    
 	};
 	
+//
 //saari edges ko sort karo
 // min weitght waali edges ko add kro,jb tak cycle nhi bnti
 
